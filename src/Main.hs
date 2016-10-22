@@ -16,7 +16,7 @@ import qualified Network.Wreq as W
 import Network.Wreq (FormParam ((:=)))
 import Web.Scotty
 
-import Config
+import TexifiedConfig
 
 -- This only exists so sqlite-simple is happy
 newtype PasteContent = PasteContent TL.Text
