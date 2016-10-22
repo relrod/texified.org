@@ -18,6 +18,11 @@ import Web.Scotty
 
 import Config
 
+-- This only exists so sqlite-simple is happy
+newtype PasteContent = PasteContent TL.Text
+instance FromRow PasteContent where fromRow = PasteContent <$> field
+instance ToRow PasteContent where toRow (PasteContent x) = toRow (Only x)
+
 style :: Html ()
 style = style_ ".serif { font-family: 'Cormorant Garamond', serif; }\
                \.pad { padding-top: 15px; padding-bottom: 15px; }\
@@ -38,8 +43,9 @@ footer =
       div_ [class_ "row"] $ do
         div_ [class_ "col-sm-6", style_ "float: left;"] $
           "TeXiFiEd"
-        div_ [class_ "col-sm-6", style_ "text-align: right; float: left;"] $
-          "© 2016 Ricky Elrod"
+        div_ [class_ "col-sm-6", style_ "text-align: right; float: left;"] $ do
+          "© 2016 Ricky Elrod - "
+          a_ [href_ "https://github.com/relrod/texified.org"] "source"
 
 latexInputBox :: ToHtml a => a -> Html ()
 latexInputBox def =
@@ -142,10 +148,6 @@ handlePost = do
       conn <- open dbPath
       execute conn "insert into pastes (content) values (?);" (PasteContent input)
       lastInsertRowId conn
-
-newtype PasteContent = PasteContent TL.Text
-instance FromRow PasteContent where fromRow = PasteContent <$> field
-instance ToRow PasteContent where toRow (PasteContent x) = toRow (Only x)
 
 getPaste :: Integer -> IO (Maybe PasteContent)
 getPaste pid = do
