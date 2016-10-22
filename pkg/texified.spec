@@ -1,7 +1,7 @@
 %global gitdate 20161022
 %global buildhost %(hostname)
 
-Name:           texified.org
+Name:           texified
 Version:        1
 Release:        1.%{gitdate}git%{?dist}
 Summary:        The "texified.org" webapp.
