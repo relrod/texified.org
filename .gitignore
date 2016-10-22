@@ -21,3 +21,4 @@ cabal.project.local
 
 # Our files:
 src/Config.hs
+*.rpm

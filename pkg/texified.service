@@ -1,0 +1,13 @@
+[Unit]
+Description=texified.org web app
+After=network.target
+Documentation=https://github.com/relrod/texified.org/
+
+[Service]
+ExecStart=/usr/bin/texified.org
+Type=simple
+User=nobody
+Group=nobody
+
+[Install]
+WantedBy=multi-user.target
