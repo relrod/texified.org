@@ -20,5 +20,5 @@ cabal.project.local
 .HTF/
 
 # Our files:
-src/Config.hs
+src/TexifiedConfig.hs
 *.rpm

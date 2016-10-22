@@ -13,8 +13,8 @@ already using Haskell, why not take advantage of Pandoc while we're at it?)
 - `cabal install dbm`
 - `git clone git://github.com/relrod/texified.org && cd texified.org`
 - `vim sql/.dbm # change your database path`
-- `cp src/Config.hs.example src/Config.hs`
-- `vim src/Config.hs # change your database path and captcha secret`
+- `cp src/TexifiedConfig.hs.example src/TexifiedConfig.hs`
+- `vim src/TexifiedConfig.hs # change your database path and captcha secret`
 - `dbm migrate development`
 - `cabal run`
 
