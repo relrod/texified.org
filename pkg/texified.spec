@@ -31,6 +31,11 @@ export LANG=en_US.UTF-8
 cd texified.org
 cabal sandbox init
 cabal install -j --only-dependencies
+
+# This is a hack for now until I figure out a better way to deploy, or forego
+# making the config a Haskell module and switch to a stringy thing instead:
+cp /home/ricky/devel/haskell/texified/src/TexifiedConfig.hs src/
+
 cabal install -j
 
 %check
