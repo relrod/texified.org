@@ -167,7 +167,7 @@ renderPaste = do
             Nothing -> alert "danger" "That paste id wasn't found! :("
 
 main :: IO ()
-main = scotty 3000 $ do
+main = scotty 3001 $ do
   get "/" $ chrome (index "" Nothing)
   get "/p/:pid" renderPaste
   post "/" handlePost
