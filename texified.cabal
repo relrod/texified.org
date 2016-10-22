@@ -1,0 +1,28 @@
+name:                texified
+version:             1
+synopsis:            A LaTeX Pastebin
+-- description:
+homepage:            https://texified.org/
+license:             BSD3
+license-file:        LICENSE
+author:              Ricky Elrod
+maintainer:          ricky@elrod.me
+copyright:           (c) 2016 Ricky Elrod
+category:            Web
+build-type:          Simple
+cabal-version:       >= 1.10
+
+executable texified
+  main-is:             Main.hs
+  build-depends:       base >= 4 && < 5
+                     , scotty
+                     , lucid
+                     , text
+                     , wreq
+                     , lens
+                     , lens-aeson
+                     , bytestring
+                     , transformers
+                     , sqlite-simple
+  hs-source-dirs:      src
+  default-language:    Haskell2010

@@ -1,0 +1,3 @@
+[development]
+backend = sqlite
+path = /var/tmp/texified.sqlite

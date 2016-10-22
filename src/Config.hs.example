@@ -1,0 +1,9 @@
+module Config where
+
+import qualified Data.ByteString.Char8 as C8
+
+captchaSecret :: C8.ByteString
+captchaSecret = C8.pack "ExamPle1212122222131313919"
+
+dbPath :: String
+dbPath = "/var/tmp/texified.sqlite"
