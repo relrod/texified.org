@@ -1,4 +1,4 @@
-%global gitdate 20161022
+%global gitdate 20170913
 %global buildhost %(hostname)
 
 Name:           texified
@@ -8,11 +8,6 @@ Summary:        The "texified.org" webapp.
 License:        BSD
 URL:            https://github.com/relrod/texified.org
 BuildRequires:  git ghc systemd chrpath
-
-# This is disabled for my local builds, since I use cabal from git.
-%if "%{buildhost}" != "t520.home.elrod.me"
-BuildRequires: cabal-install >= 1.18
-%endif
 
 %description
 texified.org
@@ -59,5 +54,8 @@ chown -R nobody.nobody %{buildroot}/%{_datarootdir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Wed Sep 13 2017 Ricky Elrod <ricky@elrod.me> - 1.1.20170913git
+- Deploy
+
 * Sat Oct 22 2016 Ricky Elrod <ricky@elrod.me> - 1-1.20161022git
 - Deploy
