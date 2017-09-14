@@ -112,7 +112,7 @@ chrome h =
         style
         script_ [src_ $ T.pack "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"] (T.pack "")
         script_ [src_ "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"] (T.pack "")
-        script_ [src_ "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"] (T.pack "")
+        script_ [src_ "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"] (T.pack "")
         script_ [src_ "https://www.google.com/recaptcha/api.js"] (T.pack "")
         latexRenderScript
       body_ $ do
